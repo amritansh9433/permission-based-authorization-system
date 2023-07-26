@@ -22,6 +22,8 @@ public class SpringSecurityConfig {
 
     private UserDetailsService userDetailsService;
 
+
+
     @Bean
     public static PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
@@ -41,15 +43,5 @@ public class SpringSecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
     }
-   /* 
-    @Bean
-    public UserDetailsService userDetailsService(){
-
-        
-        UserDetails amritansh = ((Object) User.builder()).username("amritansh").password(passwordEncoder().encode("amritansh")).roles("USER").build();
-
-        UserDetails admin = ((Object) User.builder()).username("admin").password(passwordEncoder().encode("admin")).roles("ADMIN").build();
-        return new InMemoryUserDetailsManager(amritansh,admin);
-    }*/
 
 }
